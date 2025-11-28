@@ -37,10 +37,19 @@ let soundMap = {
 
 document.addEventListener("keydown", (dets) => {
     btn.innerHTML = dets.code;
+
+    // animation find
+    let activeKey = document.querySelector(`[data-key="${dets.code}"]`);
+    if (activeKey) {
+        activeKey.classList.add("active");
+        setTimeout(() => activeKey.classList.remove("active"), 150);
+    }
     let sound = soundMap[dets.code];
+
+
     if (sound) {
         new Audio(sound).play();
-        console.log("Playing:", sound);
+        
     }
 });
 
@@ -48,6 +57,10 @@ document.addEventListener("keydown", (dets) => {
 pianoKey.forEach(item  => {
     item.addEventListener('click', () => {
         btn.innerHTML = item.dataset.key;
+         // animation
+        item.classList.add("active");
+        setTimeout(() => item.classList.remove("active"), 150);
+
         let sound = soundMap[item.dataset.key]
         if(sound){
             new Audio(sound).play()
@@ -58,8 +71,10 @@ pianoKey.forEach(item  => {
 innerKey.forEach(item => {
     item.addEventListener('click', () => {
         btn.innerHTML = item.dataset.key;
+         // animation
+        item.classList.add("active");
+        setTimeout(() => item.classList.remove("active"), 150);
         let sound = soundMap[item.dataset.key];
-        
         if(sound) {
             new Audio(sound).play()
         }
@@ -70,36 +85,6 @@ innerKey.forEach(item => {
 
 
 
-
-
-
-let aud1 = new Audio('28.mp3')
-let aud2 = new Audio('29.mp3')
-let aud3 = new Audio('30.mp3')
-let aud4 = new Audio('31.mp3')
-let aud5 = new Audio('32.mp3')
-let aud6 = new Audio('33.mp3')
-let aud7 = new Audio('34.mp3')
-let aud8 = new Audio('35.mp3')
-let aud9 = new Audio('36.mp3')
-let aud10 = new Audio('37.mp3')
-let aud11 = new Audio('38.mp3')
-let aud12 = new Audio('39.mp3')
-let aud13 = new Audio('40.mp3')
-let aud14 = new Audio('41.mp3')
-let aud15 = new Audio('42.mp3')
-let aud16 = new Audio('43.mp3')
-let aud17 = new Audio('44.mp3')
-let aud18 = new Audio('45.mp3')
-let aud19 = new Audio('46.mp3')
-let aud20 = new Audio('47.mp3')
-let aud21 = new Audio('48.mp3')
-let aud22 = new Audio('49.mp3')
-let aud23 = new Audio('50.mp3')
-let aud24 = new Audio('51.mp3')
-let aud25 = new Audio('52.mp3')
-let aud26 = new Audio('28.mp3')
-let aud27 = new Audio('29.mp3')
 
 
 // pianoKey.forEach (item => {

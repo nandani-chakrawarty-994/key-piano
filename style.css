@@ -90,3 +90,17 @@ h1{
     font-family: monospace;
     cursor: pointer;
 }
+
+
+
+
+.pianoKey,
+.innerKey {
+    transition: 0.1s ease;
+}
+
+.active {
+    transform: scale(0.9);
+    background-color: #c7c7c7;
+    box-shadow: 0 0 15px black;
+}
